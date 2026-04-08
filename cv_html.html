@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Aira Mel Miranda – CV</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#050a10;color:#cdd6e0;font-family:'Inter',sans-serif;font-size:12.5px;line-height:1.7;overflow-x:hidden;}
+
+.bg{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;background:radial-gradient(ellipse 70% 50% at 85% 5%,rgba(56,189,248,0.13) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 5% 90%,rgba(110,231,183,0.1) 0%,transparent 60%);}
+.bg-grid{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;background-image:linear-gradient(rgba(56,189,248,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(56,189,248,0.04) 1px,transparent 1px);background-size:50px 50px;}
+
+/* PAGE - coupon/A4 size, equal margins */
+.page{
+  max-width:820px;
+  margin:0 auto;
+  padding:36px 40px;
+  position:relative;z-index:1;
+}
+
+/* 3D CARD */
+.card-3d{
+  position:relative;border-radius:14px;
+  background:linear-gradient(145deg,#162030 0%,#0c1520 40%,#0a1018 100%);
+  border:1px solid rgba(56,189,248,0.18);
+  box-shadow:
+    0 0 0 1px rgba(56,189,248,0.05),
+    0 4px 8px rgba(0,0,0,0.5),
+    0 12px 28px rgba(0,0,0,0.5),
+    0 30px 60px rgba(0,0,0,0.4),
+    0 30px 60px rgba(56,189,248,0.06),
+    inset 0 1px 0 rgba(255,255,255,0.1),
+    inset 0 -1px 0 rgba(0,0,0,0.5),
+    inset 1px 0 0 rgba(255,255,255,0.04),
+    inset -1px 0 0 rgba(0,0,0,0.2);
+  transform:perspective(900px) rotateX(3deg) rotateY(0deg);
+  transition:transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  will-change:transform;
+}
+.card-3d:hover{
+  transform:perspective(900px) rotateX(0deg) rotateY(0deg) translateY(-5px) scale(1.01);
+  border-color:rgba(56,189,248,0.4);
+  box-shadow:
+    0 0 0 1px rgba(56,189,248,0.15),
+    0 8px 20px rgba(0,0,0,0.5),
+    0 24px 50px rgba(0,0,0,0.4),
+    0 50px 100px rgba(0,0,0,0.3),
+    0 0 40px rgba(56,189,248,0.12),
+    0 0 80px rgba(56,189,248,0.06),
+    inset 0 1px 0 rgba(255,255,255,0.15),
+    inset 0 -1px 0 rgba(0,0,0,0.4);
+}
+.card-3d::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;border-radius:14px 14px 0 0;background:linear-gradient(90deg,transparent,#38bdf8 30%,#6ee7b7 60%,#818cf8 85%,transparent);opacity:0.8;transition:opacity 0.3s ease;}
+.card-3d:hover::before{opacity:1;}
+.card-3d::after{content:'';position:absolute;inset:0;border-radius:14px;background:linear-gradient(145deg,rgba(255,255,255,0.05) 0%,transparent 50%,rgba(0,0,0,0.1) 100%);pointer-events:none;transition:opacity 0.3s ease;}
+
+/* HEADER */
+.header-wrap{padding:28px 28px 22px;margin-bottom:16px;overflow:hidden;}
+.hdr-orb1{position:absolute;top:-80px;right:-80px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(56,189,248,0.14) 0%,transparent 70%);pointer-events:none;}
+.hdr-orb2{position:absolute;bottom:-60px;left:-50px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(110,231,183,0.09) 0%,transparent 70%);pointer-events:none;}
+.dot-grid{position:absolute;bottom:16px;right:20px;display:grid;grid-template-columns:repeat(9,1fr);gap:5px;opacity:0.12;pointer-events:none;}
+.dot-grid span{width:3px;height:3px;border-radius:50%;background:#38bdf8;display:block;}
+
+.name{font-family:'Space Grotesk',sans-serif;font-size:40px;font-weight:800;line-height:1.05;margin-bottom:5px;background:linear-gradient(135deg,#ffffff 0%,#bae6fd 35%,#38bdf8 65%,#6ee7b7 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 2px 16px rgba(56,189,248,0.25));position:relative;z-index:1;}
+.role{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#6ee7b7;margin-bottom:12px;position:relative;z-index:1;}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px;position:relative;z-index:1;}
+.badge{font-size:9.5px;font-weight:600;padding:3px 12px;border-radius:20px;letter-spacing:0.4px;}
+.badge-b{border:1px solid rgba(56,189,248,0.5);color:#7dd3fc;background:linear-gradient(135deg,rgba(56,189,248,0.14),rgba(56,189,248,0.05));box-shadow:0 0 12px rgba(56,189,248,0.12),inset 0 1px 0 rgba(255,255,255,0.08);}
+.badge-g{border:1px solid rgba(110,231,183,0.5);color:#6ee7b7;background:linear-gradient(135deg,rgba(110,231,183,0.14),rgba(110,231,183,0.05));box-shadow:0 0 12px rgba(110,231,183,0.12),inset 0 1px 0 rgba(255,255,255,0.08);}
+.badge-v{border:1px solid rgba(129,140,248,0.5);color:#a5b4fc;background:linear-gradient(135deg,rgba(129,140,248,0.14),rgba(129,140,248,0.05));box-shadow:0 0 12px rgba(129,140,248,0.12),inset 0 1px 0 rgba(255,255,255,0.08);}
+
+/* CONTACT */
+.contact-box{background:rgba(255,255,255,0.02);border:1px solid rgba(56,189,248,0.1);border-radius:10px;padding:12px 16px;position:relative;z-index:1;box-shadow:inset 0 1px 0 rgba(255,255,255,0.04),0 4px 14px rgba(0,0,0,0.3);}
+.cb-title{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:#38bdf8;font-weight:700;padding-bottom:7px;border-bottom:1px solid rgba(56,189,248,0.1);margin-bottom:9px;}
+.cr-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px 12px;}
+.cr{display:flex;gap:6px;align-items:flex-start;}
+.cr-ico{font-size:10px;margin-top:2px;flex-shrink:0;}
+.cr-lbl{font-size:7px;text-transform:uppercase;letter-spacing:1px;color:#2a4d62;margin-bottom:1px;}
+.cr-val{font-size:9.5px;color:#9abcd0;font-weight:500;word-break:break-word;line-height:1.4;}
+
+/* TAGLINE */
+.tagline{background:linear-gradient(135deg,#0f1d2e,#0a1520);border:1px solid rgba(110,231,183,0.15);border-left:3px solid #6ee7b7;border-radius:0 12px 12px 0;padding:13px 20px;font-size:12.5px;color:#6a8fa5;font-style:italic;line-height:1.8;margin-bottom:16px;box-shadow:0 8px 30px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.03);position:relative;overflow:hidden;}
+.tagline::after{content:'❝';position:absolute;right:14px;top:4px;font-size:48px;color:rgba(110,231,183,0.05);font-style:normal;line-height:1;}
+.tagline b{color:#d4eaf7;font-style:normal;}
+
+/* SECTION */
+.sec{margin-bottom:16px;}
+.sec-title{font-family:'Space Grotesk',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#38bdf8;display:flex;align-items:center;gap:10px;margin-bottom:11px;text-shadow:0 0 16px rgba(56,189,248,0.35);}
+.sec-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(56,189,248,0.4),rgba(56,189,248,0.1),transparent);}
+
+/* SKILLS */
+.sk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.sk-card{padding:12px 13px;}
+.sk-t{font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#6ee7b7;margin-bottom:8px;text-shadow:0 0 8px rgba(110,231,183,0.25);}
+.tags{display:flex;flex-wrap:wrap;gap:4px;}
+.tag{font-size:9.5px;padding:2px 8px;border-radius:4px;background:rgba(56,189,248,0.06);border:1px solid rgba(56,189,248,0.12);color:#6a8fa5;box-shadow:inset 0 1px 0 rgba(255,255,255,0.03);}
+
+/* DIVIDER */
+.div{height:1px;margin:14px 0;position:relative;background:linear-gradient(90deg,transparent,rgba(56,189,248,0.4),rgba(110,231,183,0.3),rgba(129,140,248,0.2),transparent);box-shadow:0 0 6px rgba(56,189,248,0.12);}
+.div::after{content:'◆';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:rgba(56,189,248,0.5);font-size:7px;background:#050a10;padding:0 6px;text-shadow:0 0 6px rgba(56,189,248,0.4);}
+
+/* EXP */
+.exp{padding:13px 17px 13px 22px;margin-bottom:8px;}
+.exp-left-bar{position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:14px 0 0 14px;background:linear-gradient(180deg,#38bdf8 0%,#6ee7b7 50%,#818cf8 100%);box-shadow:0 0 10px rgba(56,189,248,0.4);}
+.exp-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:2px;}
+.exp-role{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:#e8f4ff;}
+.exp-date{font-size:8.5px;color:#38bdf8;white-space:nowrap;padding:2px 10px;border:1px solid rgba(56,189,248,0.28);border-radius:20px;margin-top:2px;background:rgba(56,189,248,0.07);box-shadow:0 0 10px rgba(56,189,248,0.12),inset 0 1px 0 rgba(255,255,255,0.06);text-shadow:0 0 6px rgba(56,189,248,0.35);}
+.exp-co{font-size:10.5px;color:#6ee7b7;font-weight:500;margin-bottom:7px;}
+.exp-li{list-style:none;}
+.exp-li li{font-size:11.5px;color:#4d6e82;padding:1px 0 1px 13px;position:relative;line-height:1.6;}
+.exp-li li::before{content:'›';position:absolute;left:0;color:#38bdf8;font-weight:700;text-shadow:0 0 5px rgba(56,189,248,0.4);}
+.exp-li b{color:#8ab0c4;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+
+/* EDU */
+.edu{padding:15px 20px;display:flex;justify-content:space-between;align-items:center;}
+.edu-deg{font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:700;color:#e8f4ff;margin-bottom:2px;}
+.edu-school{font-size:11px;color:#6ee7b7;}
+.edu-yr{font-size:9.5px;color:#38bdf8;padding:2px 12px;border:1px solid rgba(56,189,248,0.28);border-radius:20px;background:rgba(56,189,248,0.07);box-shadow:0 0 10px rgba(56,189,248,0.15),inset 0 1px 0 rgba(255,255,255,0.06);}
+
+/* TRAINING */
+.tr-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px 18px;}
+.tr-row{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:#3d5e70;padding:4px 0;border-bottom:1px solid rgba(56,189,248,0.05);gap:8px;}
+.tr-yr{font-size:9px;color:#38bdf8;font-weight:600;white-space:nowrap;}
+
+/* REF */
+.ref-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;}
+.ref-card{padding:11px;display:flex;flex-direction:column;gap:2px;min-height:84px;box-shadow:0 6px 16px rgba(0,0,0,0.5),0 14px 36px rgba(0,0,0,0.35),inset 0 1px 0 rgba(255,255,255,0.05),inset 0 -1px 0 rgba(0,0,0,0.3);}
+.ref-name{font-size:10px;font-weight:700;color:#d0e8f5;line-height:1.3;}
+.ref-role{font-size:8.5px;color:#38bdf8;font-weight:500;}
+.ref-co{font-size:8px;color:#264558;}
+.ref-contact{font-size:8px;color:#4d6e80;margin-top:auto;padding-top:5px;border-top:1px solid rgba(56,189,248,0.07);}
+
+/* FOOTER */
+.footer-wrap{margin-top:16px;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 0 0 1px rgba(56,189,248,0.07),0 16px 50px rgba(0,0,0,0.5),inset 0 1px 0 rgba(255,255,255,0.06);}
+.brand{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:800;background:linear-gradient(135deg,#38bdf8,#6ee7b7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 12px rgba(56,189,248,0.35));}
+.foot-c{font-size:9.5px;color:#244060;text-align:center;line-height:1.7;}
+.foot-q{font-size:10.5px;color:#6ee7b7;font-style:italic;}
+
+.dl{position:fixed;bottom:20px;right:20px;background:linear-gradient(135deg,#38bdf8,#6ee7b7);color:#05111a;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:12px;padding:11px 22px;border-radius:30px;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(56,189,248,0.35),0 0 0 1px rgba(56,189,248,0.2);z-index:999;}
+
+@media print{
+  body{background:#050a10!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .page{padding:28px 32px;}
+  .dl{display:none!important;}
+  .bg,.bg-grid{display:none;}
+}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="bg-grid"></div>
+<button class="dl" onclick="window.print()">⬇ Save as PDF</button>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="card-3d header-wrap">
+    <div class="hdr-orb1"></div><div class="hdr-orb2"></div>
+    <div class="dot-grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="name">Aira Mel O. Miranda</div>
+    <div class="role">Virtual Assistant · Graphic Designer · Web Development & Design · Web Content Management</div>
+    <div class="badges">
+      <span class="badge badge-b">Graphic Design</span>
+      <span class="badge badge-g">Web Development</span>
+      <span class="badge badge-v">AI Specialist</span>
+      <span class="badge badge-b">Content Creator</span>
+      <span class="badge badge-g">E-Commerce VA</span>
+    </div>
+    <div class="contact-box">
+      <div class="cb-title">Contact & Profiles</div>
+      <div class="cr-grid">
+        <div class="cr"><div class="cr-ico">📞</div><div><div class="cr-lbl">Phone / WhatsApp</div><div class="cr-val">(+639) 679-611-869</div></div></div>
+        <div class="cr"><div class="cr-ico">✉️</div><div><div class="cr-lbl">Email</div><div class="cr-val">mirandaairamelochave@gmail.com</div></div></div>
+        <div class="cr"><div class="cr-ico">💬</div><div><div class="cr-lbl">Skype</div><div class="cr-val">live:.cid.9c0ce36e85739e8d</div></div></div>
+        <div class="cr"><div class="cr-ico">📍</div><div><div class="cr-lbl">Location</div><div class="cr-val">Alaminos City, Pangasinan, PH</div></div></div>
+        <div class="cr"><div class="cr-ico">👤</div><div><div class="cr-lbl">Facebook</div><div class="cr-val">tiny.cc/airamelmiranda</div></div></div>
+        <div class="cr"><div class="cr-ico">💼</div><div><div class="cr-lbl">LinkedIn</div><div class="cr-val">tinyurl.com/airamelmirandalinkedin</div></div></div>
+        <div class="cr"><div class="cr-ico">🔍</div><div><div class="cr-lbl">Online Jobs PH</div><div class="cr-val">tinyurl.com/airamelmirandaonlinejobsph</div></div></div>
+        <div class="cr"><div class="cr-ico">🌐</div><div><div class="cr-lbl">Portfolio</div><div class="cr-val">czcetmyl.github.io/my-portfolio</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAGLINE -->
+  <div class="tagline"><b>"I may not say much — but my work does."</b> I show up consistently, take full ownership of every task, and deliver output I'm genuinely proud of. I'm still growing in the web space, but I've already built and deployed real websites for real clients — and I learn fast.</div>
+
+  <!-- SKILLS -->
+  <div class="sec">
+    <div class="sec-title">What I Can Do For You</div>
+    <div class="sk-grid">
+      <div class="card-3d sk-card"><div class="sk-t">🎨 Graphic Design</div><div class="tags"><span class="tag">Canva</span><span class="tag">Photoshop</span><span class="tag">Illustrator</span><span class="tag">InDesign</span><span class="tag">Procreate</span><span class="tag">CapCut</span></div></div>
+      <div class="card-3d sk-card"><div class="sk-t">🌐 Web Support</div><div class="tags"><span class="tag">WordPress</span><span class="tag">Wix</span><span class="tag">GitHub Pages</span><span class="tag">HTML/CSS</span><span class="tag">Claude Code</span><span class="tag">Git Bash</span><span class="tag">System.io</span></div></div>
+      <div class="card-3d sk-card"><div class="sk-t">🤖 AI Tools</div><div class="tags"><span class="tag">Claude</span><span class="tag">ChatGPT</span><span class="tag">Gemini</span><span class="tag">DeepSeek</span><span class="tag">Groq</span></div></div>
+      <div class="card-3d sk-card"><div class="sk-t">📱 Social Media</div><div class="tags"><span class="tag">Content Creation</span><span class="tag">Reels</span><span class="tag">Scheduling</span><span class="tag">Page Management</span></div></div>
+      <div class="card-3d sk-card"><div class="sk-t">🛒 E-Commerce</div><div class="tags"><span class="tag">Shopify</span><span class="tag">GoHighLevel</span><span class="tag">Product Listing</span><span class="tag">SEO</span></div></div>
+      <div class="card-3d sk-card"><div class="sk-t">⚙️ Admin & PM</div><div class="tags"><span class="tag">Trello</span><span class="tag">Asana</span><span class="tag">Notion</span><span class="tag">Google Workspace</span><span class="tag">Slack</span></div></div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- EXPERIENCE -->
+  <div class="sec">
+    <div class="sec-title">Work Experience</div>
+    <div class="card-3d exp">
+      <div class="exp-left-bar"></div>
+      <div class="exp-top"><div><div class="exp-role">ESL Teacher & Web Developer</div><div class="exp-co">International Humanitarian Missions (IHM) — Under 7 Leaves Cafe, California, USA</div></div><div class="exp-date">2024 – Present</div></div>
+      <ul class="exp-li">
+        <li>Built and deployed the IHM website from scratch using HTML, CSS, and GitHub Pages</li>
+        <li>Created interactive lesson materials, bilingual quizzes, and classroom tools for Grade 2–3 Vietnamese students</li>
+        <li>Applied AI tools (Claude, ChatGPT) to improve content quality and design workflow efficiency</li>
+        <li>Managed ongoing site updates, content uploads, and basic maintenance independently</li>
+      </ul>
+    </div>
+    <div class="card-3d exp">
+      <div class="exp-left-bar"></div>
+      <div class="exp-top"><div><div class="exp-role">Social Media Content Creator</div><div class="exp-co">Daddy's Pizza & Pasta Joint — Alaminos City, Pangasinan</div></div><div class="exp-date">Feb 2023 – Sep 2024</div></div>
+      <ul class="exp-li">
+        <li>Designed promotional graphics, seasonal campaigns, and event materials using Canva</li>
+        <li>Created brand-consistent visual content that boosted local visibility and customer engagement</li>
+        <li>Produced designs for events attended by city officials and local organizations</li>
+      </ul>
+    </div>
+    <div class="two-col">
+      <div class="card-3d exp">
+        <div class="exp-left-bar"></div>
+        <div class="exp-top"><div><div class="exp-role">Page Manager & Media Creator</div><div class="exp-co">Pentecostals of Bani</div></div><div class="exp-date">2022 – Present</div></div>
+        <ul class="exp-li">
+          <li>Managed official page, graphics, and reels for hundreds of followers</li>
+          <li>Designed weekly visual content with the media team</li>
+          <li>Maintained consistent faith-driven digital presence</li>
+        </ul>
+      </div>
+      <div class="card-3d exp">
+        <div class="exp-left-bar"></div>
+        <div class="exp-top"><div><div class="exp-role">Design Manager & Co-Investor</div><div class="exp-co">Miranda Acts PrintDesign PH</div></div><div class="exp-date">2020 – Present</div></div>
+        <ul class="exp-li">
+          <li>Led all design output: graphics, print layouts, and promo materials</li>
+          <li>Managed orders, client communication, and logistics</li>
+          <li>Grew online presence through consistent digital content</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- EDUCATION -->
+  <div class="sec">
+    <div class="sec-title">Education</div>
+    <div class="card-3d edu">
+      <div><div class="edu-deg">Bachelor of Secondary Education — Major in English</div><div class="edu-school">Pangasinan State University</div></div>
+      <div class="edu-yr">2020 – 2024</div>
+    </div>
+  </div>
+
+  <!-- TRAINING -->
+  <div class="sec">
+    <div class="sec-title">Relevant Training</div>
+    <div class="card-3d" style="padding:14px 18px;">
+      <div class="tr-grid">
+        <div class="tr-row"><span>Photoshop & Adobe InDesign for Designers</span><span class="tr-yr">2021</span></div>
+        <div class="tr-row"><span>Color Theory & Visual Branding</span><span class="tr-yr">2021</span></div>
+        <div class="tr-row"><span>Shopify Freelancing: Store Setup</span><span class="tr-yr">2021</span></div>
+        <div class="tr-row"><span>WordPress Freelancing & Customization</span><span class="tr-yr">2022</span></div>
+        <div class="tr-row"><span>GoHighLevel CRM & Workflow Automation</span><span class="tr-yr">2022</span></div>
+        <div class="tr-row"><span>Graphic VA Training — Branding & Design</span><span class="tr-yr">2025</span></div>
+        <div class="tr-row"><span>Social Media VA Training</span><span class="tr-yr">2023</span></div>
+        <div class="tr-row"><span>Personal Branding & Portfolio Building</span><span class="tr-yr">2024</span></div>
+        <div class="tr-row"><span>Advanced VA Systems — CRM Integration</span><span class="tr-yr">2024</span></div>
+        <div class="tr-row"><span>E-Commerce VA Masterclass (Amazon, Shopify)</span><span class="tr-yr">2025</span></div>
+        <div class="tr-row"><span>VA Training & Graphic VA Specialist Program</span><span class="tr-yr">2025</span></div>
+        <div class="tr-row"><span>AI for Beginners — Claude Tutorial</span><span class="tr-yr">2026</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REFERENCES -->
+  <div class="sec">
+    <div class="sec-title">References</div>
+    <div class="ref-grid">
+      <div class="card-3d ref-card"><div class="ref-name">Mariel Ortaleza</div><div class="ref-role">Bookkeeper</div><div class="ref-co">Keep it Simple LLC</div><div class="ref-contact">📞 09282970646</div></div>
+      <div class="card-3d ref-card"><div class="ref-name">Johananerie Canedo</div><div class="ref-role">Project Manager</div><div class="ref-co">7 Leaves Cafe, USA</div><div class="ref-contact">✉️ johanaerie.canedo@7leavescafe.com</div></div>
+      <div class="card-3d ref-card"><div class="ref-name">Dexter Zoilo A. Flores</div><div class="ref-role">Coach</div><div class="ref-co">Foundever</div><div class="ref-contact">📞 09393518030</div></div>
+      <div class="card-3d ref-card"><div class="ref-name">Kimberly Belmonte</div><div class="ref-role">ESL Teacher</div><div class="ref-co">Bugu College</div><div class="ref-contact">📞 09950728083</div></div>
+      <div class="card-3d ref-card"><div class="ref-name">Khorina Kit Garcia</div><div class="ref-role">Founder</div><div class="ref-co">Golden Vision</div><div class="ref-contact">📞 09272380316</div></div>
+      <div class="card-3d ref-card"><div class="ref-name">Richelle Ira P. Magat</div><div class="ref-role">HR Consultant</div><div class="ref-co">Upwork</div><div class="ref-contact">📞 0917 658 0693</div></div>
+      <div class="card-3d ref-card"><div class="ref-name">John Jhynell Motilla</div><div class="ref-role">Page Manager | E-Commerce Manager</div><div class="ref-co">Your VA Buddy</div><div class="ref-contact">📞 09176856472</div></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="card-3d footer-wrap">
+    <div class="brand">Meltech.ai</div>
+    <div class="foot-c">Aira Mel O. Miranda · mirandaairamelochave@gmail.com<br>(+639) 679-611-869 · Alaminos City, Pangasinan</div>
+    <div class="foot-q">"My work speaks for itself."</div>
+  </div>
+
+</div>
+<script>
+document.querySelectorAll('.card-3d').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    const x = e.clientX - r.left;
+    const y = e.clientY - r.top;
+    const cx = r.width / 2;
+    const cy = r.height / 2;
+    const rotY = ((x - cx) / cx) * 6;
+    const rotX = -((y - cy) / cy) * 4;
+    card.style.transform = `perspective(900px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-5px) scale(1.01)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'perspective(900px) rotateX(3deg) rotateY(0deg)';
+  });
+});
+</script>
+</body>
+</html>
